@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Configuration Updater</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type=file] {
+            margin-bottom: 10px;
+        }
+        input[type=number], input[type=submit] {
+            padding: 10px;
+            margin-bottom: 10px;
+            width: calc(100% - 22px); /* Adjust for padding and border */
+            box-sizing: border-box;
+        }
+        input[type=submit] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSV Configuration Updater</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="file">Configuration CSV:</label>
+                <input type="file" name="file" id="file" accept=".csv" required>
+            </div>
+            <div>
+                <label for="existing_yaml">Matrix File (YAML/CSV):</label>
+                <input type="file" name="existing_yaml" id="existing_yaml" accept=".yaml,.yml,.csv" required>
+            </div>
+            <input type="submit" value="Update Configuration">
+        </form>
+    </div>
+</body>
+</html>
